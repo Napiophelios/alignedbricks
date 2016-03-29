@@ -17,11 +17,7 @@ This mod aligns all sides of default brick nodes to maintain a continuous stagge
 
 The mod overides these default nodes with 3 textures per node:
 
-default:brick
-default:desertstone brick
-default:obsidian brick
-default:sandstone brick
-default:stone brick
+brick, desertstone brick, obsidian brick, sandstone brick, and stone brick
 
 --------------------------------------
 
