@@ -8,6 +8,7 @@ https://forum.minetest.net/viewtopic.php?f=9&t=11179
 Rename extracted folder to "alignedbricks"
 
 Depends : default
+
 for Minetest_game v0.4.11 or later
 
 --------------------------------------
