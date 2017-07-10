@@ -5,11 +5,9 @@ https://forum.minetest.net/viewtopic.php?f=9&t=11179
 
 --------------------------------------
 
-Rename extracted folder to "alignedbricks"
-
 Depends : default
 
-for Minetest_game v0.4.11 or later
+for Minetest_game v0.4.16.0
 
 --------------------------------------
 
@@ -21,11 +19,11 @@ brick, desertstone brick, obsidian brick, sandstone brick, and stone brick
 
 --------------------------------------
 
-All code derived from Minetest_game (Default Mod) 0.4.13
+All code derived from Minetest_game
 
 [ GNU Lesser General Public License version 2.1 ]
 
-All Textures derived from Minetest_game (Default Mod) 0.4.13
+All Textures derived from Minetest_game
 
 License: LGPL v2.1 for code
 

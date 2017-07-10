@@ -1,10 +1,14 @@
---AlignedBricks mod
---by Napiophelios
+--[[
+AlignedBricks mod for Minetest_game 0.4.16
+by Napiophelios
 
---Depends : default
+Depends : default
 
---for Minetest_game 0.4.11 or later
---All code derived from Minetest_game (Default Mod) 0.4.11
+All code/textures derived from Minetest_game
+License of code: LGPL v2.1
+License of textures:
+Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
+--]]
 
 minetest.override_item("default:brick", {
    tiles = {"alignedbricks_brick_top.png",
@@ -13,6 +17,15 @@ minetest.override_item("default:brick", {
   "alignedbricks_brick_side.png^[transformFX",
   "alignedbricks_brick.png^[transformFX",
   "alignedbricks_brick.png"},
+})
+
+minetest.override_item("default:desert_sandstone_brick", {
+  tiles = {"alignedbricks_desert_sandstone_brick_top.png",
+  "alignedbricks_desert_sandstone_brick_top.png^[transformFXR90",
+  "alignedbricks_desert_sandstone_brick_side.png",
+  "alignedbricks_desert_sandstone_brick_side.png^[transformFX",
+  "alignedbricks_desert_sandstone_brick.png^[transformFX",
+  "alignedbricks_desert_sandstone_brick.png"},
 })
 
 minetest.override_item("default:desert_stonebrick", {
@@ -40,6 +53,15 @@ minetest.override_item("default:sandstonebrick", {
   "alignedbricks_sandstone_brick_side.png^[transformFX",
   "alignedbricks_sandstone_brick.png^[transformFX",
   "alignedbricks_sandstone_brick.png"},
+})
+
+minetest.override_item("default:silver_sandstone_brick", {
+  tiles = {"alignedbricks_silver_sandstone_brick_top.png",
+  "alignedbricks_silver_sandstone_brick_top.png^[transformFXR90",
+  "alignedbricks_silver_sandstone_brick_side.png",
+  "alignedbricks_silver_sandstone_brick_side.png^[transformFX",
+  "alignedbricks_silver_sandstone_brick.png^[transformFX",
+  "alignedbricks_silver_sandstone_brick.png"},
 })
 
 minetest.override_item("default:stonebrick", {
