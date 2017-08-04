@@ -1,4 +1,4 @@
-All Textures derived from Minetest_game (Default Mod) 0.4.13
+All Textures derived from Minetest_game (Default Mod) 0.4.16
 
 License of media (textures )
 --------------------------------------
@@ -24,3 +24,11 @@ BlockMen (CC BY-SA 3.0):
 Everything not listed in here:
 Copyright (C) 2010-2016 celeron55,
 Perttu Ahola <celeron55@gmail.com>
+
+
+Gambit / Kilbith (WTFPL)
+xdecor_moonbrick_*.png
+
+alignedbricks_mudbrick_*.png
+
+alignedbricks_nether_*.png

@@ -1,4 +1,5 @@
 default
+stairs
 mudbrick?
 nether?
 xdecor?

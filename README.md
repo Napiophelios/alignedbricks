@@ -5,7 +5,7 @@ https://forum.minetest.net/viewtopic.php?f=9&t=11179
 
 --------------------------------------
 
-Depends : default
+Depends : default, stairs
 
 for Minetest_game v0.4.16.0
 
