@@ -6,6 +6,8 @@
 -- Depends :
 -- default
 -- stairs
+-- amber?
+-- darkage?
 -- mudbrick?
 -- nether?
 -- xdecor?
@@ -22,6 +24,8 @@
 
 alignedbricks = {}
 
+screwdriver = screwdriver or {}
+
 -- override default bricks { "<node name>", "<image name>" }
 local bricks = {
 	{"brick", "brick"},
@@ -34,7 +38,6 @@ local bricks = {
 }
 
 for _, bricks in pairs(bricks) do
-
 	minetest.override_item("default:" .. bricks[1] .. "", {
 		tiles = {
 		"alignedbricks_" .. bricks[2] .. "_top.png",
@@ -43,12 +46,91 @@ for _, bricks in pairs(bricks) do
 		"alignedbricks_" .. bricks[2] .. "_side.png^[transformFX",
 		"alignedbricks_" .. bricks[2] .. ".png^[transformFX",
 		"alignedbricks_" .. bricks[2] .. ".png"},
+		on_rotate = screwdriver.rotate_simple,
 	})
-	
+--override brick stairs
+minetest.override_item("stairs:stair_" .. bricks[1] .. "", {
+tiles = {
+		"alignedbricks_" .. bricks[2] .. "_top.png",
+		"alignedbricks_" .. bricks[2] .. "_top.png^[transformFXR90",
+		"alignedbricks_" .. bricks[2] .. "_side.png",
+		"alignedbricks_" .. bricks[2] .. "_side.png^[transformFX",
+		"alignedbricks_" .. bricks[2] .. ".png^[transformFX",
+		"alignedbricks_" .. bricks[2] .. ".png"},
+})
+--override brick slabs
+minetest.override_item("stairs:slab_" .. bricks[1] .. "", {
+tiles = {
+		"alignedbricks_" .. bricks[2] .. "_top.png",
+		"alignedbricks_" .. bricks[2] .. "_top.png^[transformFXR90",
+		"alignedbricks_" .. bricks[2] .. "_side.png",
+		"alignedbricks_" .. bricks[2] .. "_side.png^[transformFX",
+		"alignedbricks_" .. bricks[2] .. ".png^[transformFX",
+		"alignedbricks_" .. bricks[2] .. ".png"},
+})
+end
+
+if minetest.get_modpath( 'amber') then
+	minetest.override_item("amber:bricks", {
+		tiles = {"alignedbricks_amber_bricks_top.png",
+		"alignedbricks_amber_bricks_top.png^[transformFXR90",
+		"alignedbricks_amber_bricks_side.png",
+		"alignedbricks_amber_bricks_side.png^[transformFX",
+		"alignedbricks_amber_bricks.png^[transformFX",
+		"alignedbricks_amber_bricks.png"},
+		paramtype2 = "facedir",
+		place_param2 = 0,
+		on_rotate = screwdriver.rotate_simple,
+	})
+end
+
+if minetest.get_modpath( 'darkage') then
+-- override darkage bricks
+	local dark_age = {
+		{"basalt_brick"},
+		{"gneiss_brick"},
+		{"ors_brick"},
+		{"slate_brick"},
+		{"stone_brick"}
+	}
+
+for _, dark_age in pairs(dark_age) do
+	minetest.override_item("darkage:" .. dark_age[1] .. "", {
+		tiles = {
+		"alignedbricks_darkage_" .. dark_age[1] .. "_top.png",
+		"alignedbricks_darkage_" .. dark_age[1] .. "_top.png^[transformFXR90",
+		"alignedbricks_darkage_" .. dark_age[1] .. "_side.png",
+		"alignedbricks_darkage_" .. dark_age[1] .. "_side.png^[transformFX",
+		"alignedbricks_darkage_" .. dark_age[1] .. ".png^[transformFX",
+		"alignedbricks_darkage_" .. dark_age[1] .. ".png"},
+		paramtype2 = "facedir",
+		place_param2 = 0,
+		on_rotate = screwdriver.rotate_simple,
+	})
+--override darkage brick stairs
+	minetest.override_item("stairs:stair_" .. dark_age[1] .. "", {
+		tiles = {
+		"alignedbricks_darkage_" .. dark_age[1] .. "_top.png",
+		"alignedbricks_darkage_" .. dark_age[1] .. "_top.png^[transformFXR90",
+		"alignedbricks_darkage_" .. dark_age[1] .. "_side.png",
+		"alignedbricks_darkage_" .. dark_age[1] .. "_side.png^[transformFX",
+		"alignedbricks_darkage_" .. dark_age[1] .. ".png^[transformFX",
+		"alignedbricks_darkage_" .. dark_age[1] .. ".png"},
+	})
+--override darkage brick slabs
+	minetest.override_item("stairs:slab_" .. dark_age[1] .. "", {
+		tiles = {
+		"alignedbricks_darkage_" .. dark_age[1] .. "_top.png",
+		"alignedbricks_darkage_" .. dark_age[1] .. "_top.png^[transformFXR90",
+		"alignedbricks_darkage_" .. dark_age[1] .. "_side.png",
+		"alignedbricks_darkage_" .. dark_age[1] .. "_side.png^[transformFX",
+		"alignedbricks_darkage_" .. dark_age[1] .. ".png^[transformFX",
+		"alignedbricks_darkage_" .. dark_age[1] .. ".png"},
+	})
+	end
 end
 
 if minetest.get_modpath( 'mudbrick') then
-
 	minetest.override_item("mudbrick:mudbrick_1", {
 		tiles = {"alignedbricks_mudbrick_wet_top.png",
 		"alignedbricks_mudbrick_wet_top.png^[transformFXR90",
@@ -56,6 +138,9 @@ if minetest.get_modpath( 'mudbrick') then
 		"alignedbricks_mudbrick_wet_side.png^[transformFX",
 		"alignedbricks_mudbrick_wet.png^[transformFX",
 		"alignedbricks_mudbrick_wet.png"},
+		paramtype2 = "facedir",
+		place_param2 = 0,
+		on_rotate = screwdriver.rotate_simple,
 	})
 
 	minetest.override_item("mudbrick:mudbrick_2", {
@@ -65,12 +150,13 @@ if minetest.get_modpath( 'mudbrick') then
 		"alignedbricks_mudbrick_dried_side.png^[transformFX",
 		"alignedbricks_mudbrick_dried.png^[transformFX",
 		"alignedbricks_mudbrick_dried.png"},
+		paramtype2 = "facedir",
+		place_param2 = 0,
+		on_rotate = screwdriver.rotate_simple,
 	})
-	
 end
 
 if minetest.get_modpath( 'nether') then
-
 	minetest.override_item("nether:brick", {
 		tiles = {"alignedbricks_nether_brick_top.png",
 		"alignedbricks_nether_brick_top.png^[transformFXR90",
@@ -78,12 +164,13 @@ if minetest.get_modpath( 'nether') then
 		"alignedbricks_nether_brick_side.png^[transformFX",
 		"alignedbricks_nether_brick.png^[transformFX",
 		"alignedbricks_nether_brick.png"},
+		paramtype2 = "facedir",
+		place_param2 = 0,
+		on_rotate = screwdriver.rotate_simple,
 	})
-	
 end
 
 if minetest.get_modpath( 'xdecor') then
-
 	minetest.override_item("xdecor:moonbrick", {
 		tiles = {"alignedbricks_moonbrick_top.png",
 		"alignedbricks_moonbrick_top.png^[transformFXR90",
@@ -91,8 +178,10 @@ if minetest.get_modpath( 'xdecor') then
 		"alignedbricks_moonbrick_side.png^[transformFX",
 		"alignedbricks_moonbrick.png^[transformFX",
 		"alignedbricks_moonbrick.png"},
+		paramtype2 = "facedir",
+		place_param2 = 0,
+		on_rotate = screwdriver.rotate_simple,
 	})
-	
 end
 
 
@@ -105,6 +194,8 @@ alignedbricks.register = function(dslabs_name, dslabs_desc, dslabs_images, dslab
 		is_ground_content = false,
 		groups = dslabs_groups,
 		sounds = dslabs_sounds,
+		paramtype2 = "facedir",
+		on_rotate = screwdriver.rotate_simple,
 	})
 
 -- crafting recipe
@@ -123,7 +214,7 @@ alignedbricks.register = function(dslabs_name, dslabs_desc, dslabs_images, dslab
 			{dslabs_name},
 		},
 	})
-	
+
 end
 
 -- stacked block slabs
@@ -225,3 +316,29 @@ alignedbricks.register(
 	default.node_sound_metal_defaults(),
 	"stairs:slab_tinblock"
 )
+
+--override block stairs/slabs { "<node name>", "<image name>" }
+local block= {
+	{"desert_sandstone_block", "desert_sandstone_block"},
+	{"desert_stone_block", "desert_stone_block"},
+	{"obsidian_block", "obsidian_block"},
+	{"sandstone_block", "sandstone_block"},
+	{"silver_sandstone_block", "silver_sandstone_block"},
+	{"stone_block", "stone_block"},
+	{"bronzeblock", "bronze_block"},
+	{"copperblock", "copper_block"},
+	{"goldblock", "gold_block"},
+	{"steelblock", "steel_block"},
+	{"tinblock", "tin_block"},
+}
+
+for _, block in pairs(block) do
+-- block stairs
+minetest.override_item("stairs:stair_" .. block[1] .."", {
+tiles = {"alignedbricks_dslabs_" .. block[2] .. ".png", "default_" .. block[2] .. ".png", "alignedbricks_dslabs_" .. block[2] .. ".png"},
+})
+-- block slabs
+minetest.override_item("stairs:slab_" ..block[1] .."", {
+tiles = {"default_" .. block[2] .. ".png", "default_" .. block[2] .. ".png", "alignedbricks_dslabs_" .. block[2] .. ".png"},
+})
+end

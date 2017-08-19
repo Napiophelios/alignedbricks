@@ -1,34 +1,35 @@
-All Textures derived from Minetest_game (Default Mod) 0.4.16
-
-License of media (textures )
---------------------------------------
-Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
-http://creativecommons.org/licenses/by-sa/3.0/
-
 Authors of original media files
 -----------------------
-
-VanessaE (WTFPL):
-  default_desert_stone_brick.png
-  default_sandstone_brick.png
-
-Calinou (CC BY-SA):
-  default_brick.png
-
-jojoa1997 (WTFPL):
-  default_obsidian.png ???
-
-BlockMen (CC BY-SA 3.0):
-  default_stone_brick.png
-
-Everything not listed in here:
-Copyright (C) 2010-2016 celeron55,
-Perttu Ahola <celeron55@gmail.com>
-
-
+Master Gollum (WTFPL)
+darkage_*_brick.png
+-----------------------
 Gambit / Kilbith (WTFPL)
-xdecor_moonbrick_*.png
-
-alignedbricks_mudbrick_*.png
-
-alignedbricks_nether_*.png
+xdecor_moonbrick.png
+-----------------------
+Thermal_Shock (WTFPL)
+mudbrick_mudbrick_dried.png
+mudbrick_mudbrick_wet.png
+-----------------------
+PilzAdam (CC BY-SA 3.0)
+nether_brick.png
+-----------------------
+the_raven_262 (GPL2.1)
+amber_bricks.png
+-----------------------
+VanessaE (WTFPL):
+default_desert_stone_brick.png
+default_sandstone_brick.png
+-----------------------
+Calinou (CC BY-SA):
+default_brick.png
+-----------------------
+jojoa1997 (WTFPL):
+default_obsidian.png ???
+-----------------------
+BlockMen (CC BY-SA 3.0):
+default_stone_brick.png
+-----------------------
+License of any textures not specifically mentioned:
+Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
+http://creativecommons.org/licenses/by-sa/3.0/
+-----------------------
