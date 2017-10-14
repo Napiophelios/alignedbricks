@@ -182,6 +182,15 @@ if minetest.get_modpath( 'xdecor') then
 		place_param2 = 0,
 		on_rotate = screwdriver.rotate_simple,
 	})
+
+		minetest.override_item("xdecor:coalstone_tile", {
+		tiles = {"xdecor_coalstone_tile.png^[transformFX",
+    "xdecor_coalstone_tile.png^[transformR90",
+    "xdecor_coalstone_tile.png^[transformFX",
+    "xdecor_coalstone_tile.png^[transformFX",
+    "xdecor_coalstone_tile.png",
+    "xdecor_coalstone_tile.png"},
+	})
 end
 
 
